@@ -1,17 +1,13 @@
-import React from "react";
 import "./App.css";
 import { BrowserRouter } from "react-router";
 import AppRoutes from "./route";
+import React from "react";
 
 function App() {
 	return (
 		<React.StrictMode>
 			<BrowserRouter>
-				<div className='h-[100vh]'>
-					<div className='bg-zinc-900 h-full'>
-						<AppRoutes />
-					</div>
-				</div>
+				<AppRoutes />
 			</BrowserRouter>
 		</React.StrictMode>
 	);

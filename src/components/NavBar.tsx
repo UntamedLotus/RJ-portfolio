@@ -1,27 +1,43 @@
-import { useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { Sun, Moon } from "lucide-react";
 
-const NavBar = () => {
-	const location = useLocation();
-	const [activePath, setActivePath] = useState(location.pathname);
-
-	useEffect(() => {
-		setActivePath(location.pathname);
-	}, [location]);
+const NavBar = ({
+	darkMode,
+	setDarkMode,
+}: {
+	darkMode: boolean;
+	setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
+	const navigate = useNavigate();
 
 	return (
-		<nav className='grid grid-cols-2'>
-			<p className='p-5 text-3xl capitalize font-semibold text-[#cb83a3]'>
-				{activePath?.slice(1)}
+		<nav className='grid grid-cols-2 text-[#5a2a2a]'>
+			<p
+				onClick={() => navigate("/")}
+				className='p-5 text-2xl capitalize font-bold text-[#cb83a3] cursor-pointer'
+			>
+				RUTTIKA .
 			</p>
 
-			<section className='flex items-center justify-between px-10 border-b border-zinc-700 border-l py-6 rounded-bl-3xl bg-zinc-700 text-xl'>
+			<section className='flex items-center justify-end gap-10 px-10 text-xl'>
 				<NavLink
 					className={({ isActive }) =>
 						`${
 							isActive
-								? "text-[#b6517e] font-semibold"
-								: "text-white"
+								? "text-[#5a2a2a] font-semibold"
+								: "text-[#cb83a3]"
+						}`
+					}
+					to='home'
+				>
+					Home
+				</NavLink>
+				<NavLink
+					className={({ isActive }) =>
+						`${
+							isActive
+								? "text-[#5a2a2a] font-semibold"
+								: "text-[#cb83a3]"
 						}`
 					}
 					to='about'
@@ -32,8 +48,8 @@ const NavBar = () => {
 					className={({ isActive }) =>
 						`${
 							isActive
-								? "text-[#b6517e] font-semibold"
-								: "text-white"
+								? "text-[#5a2a2a] font-semibold"
+								: "text-[#cb83a3]"
 						}`
 					}
 					to='skills'
@@ -44,14 +60,21 @@ const NavBar = () => {
 					className={({ isActive }) =>
 						`${
 							isActive
-								? "text-[#b6517e] font-semibold"
-								: "text-white"
+								? "text-[#5a2a2a] font-semibold"
+								: "text-[#cb83a3]"
 						}`
 					}
 					to='portfolio'
 				>
 					Portfolio
 				</NavLink>
+
+				<button
+					onClick={() => setDarkMode(!darkMode)}
+					className='p-2 rounded-full bg-[#f9d9d9]/40 border border-[#e7a4b1] hover:bg-[#f9d9d9]/70 transition backdrop-blur-sm'
+				>
+					{darkMode ? <Sun size={20} /> : <Moon size={20} />}
+				</button>
 			</section>
 		</nav>
 	);
