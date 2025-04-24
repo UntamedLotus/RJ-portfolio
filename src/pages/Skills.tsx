@@ -32,7 +32,7 @@ const Skills = () => {
 
 	return (
 		<div className=' flex items-center justify-center'>
-			<div className='w-3/4 rounded-3xl space-y-7 border border-[#cb83a3] p-7 shadow-sm shadow-[#c495aa]'>
+			<div className='w-3/4 rounded-3xl space-y-7 border-2 border-dashed border-[#cb83a3] p-7 shadow-sm shadow-[#c495aa]'>
 				<Slider title='HTML & CSS' percentage={90} />
 				<Slider title='JavaScript' percentage={85} />
 				<Slider title='TypeScript' percentage={80} />

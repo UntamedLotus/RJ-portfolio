@@ -69,12 +69,12 @@ const NavBar = ({
 					Portfolio
 				</NavLink>
 
-				<button
+				{/* <button
 					onClick={() => setDarkMode(!darkMode)}
 					className='p-2 rounded-full bg-[#f9d9d9]/40 border border-[#e7a4b1] hover:bg-[#f9d9d9]/70 transition backdrop-blur-sm'
 				>
 					{darkMode ? <Sun size={20} /> : <Moon size={20} />}
-				</button>
+				</button> */}
 			</section>
 		</nav>
 	);

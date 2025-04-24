@@ -25,7 +25,7 @@ const About = () => {
 				scale: 1.03,
 				boxShadow: "0 10px 20px rgba(203, 131, 163, 0.25)",
 			}}
-			className='border border-[#cb83a3] p-7 rounded-3xl shadow-sm shadow-[#c495aa] space-y-5 transition-all duration-300 bg-white dark:bg-[#fdf6f9]'
+			className='border-2 border-dashed border-[#cb83a3] p-7 rounded-3xl shadow-sm shadow-[#c495aa] space-y-5 transition-all duration-300 bg-white dark:bg-[#fdf6f9]'
 		>
 			<section className='space-y-4 flex items-center gap-5'>
 				<span className='text-2xl'>{icon}</span>

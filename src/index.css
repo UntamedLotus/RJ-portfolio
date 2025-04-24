@@ -19,3 +19,7 @@ body {
 	min-height: 100vh;
 	cursor: url("/path-to-heart-cursor.png"), auto;
 }
+
+.swiper-pagination-bullet-active {
+	background: #6b3e54 !important;
+}

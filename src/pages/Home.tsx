@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
+import ContactModal from "../components/ContactModal";
 
 const Home = () => {
+	const [isOpen, setIsOpen] = useState<boolean>(false);
+
 	return (
 		<div>
 			<motion.div
@@ -42,7 +45,11 @@ const Home = () => {
 					</div>
 				</motion.div> */}
 				<div className='mt-8 flex gap-4 font-semibold'>
-					<button className='px-6 py-2 rounded-lg border-2 border-[#e7a4b1] text-[#c2718c] hover:bg-[#d68ea3] hover:text-white transition shadow-md'>
+					<button
+						type='button'
+						onClick={() => setIsOpen(true)}
+						className='px-6 py-2 rounded-lg border-2 border-[#e7a4b1] text-[#c2718c] hover:bg-[#d68ea3] hover:text-white transition shadow-md'
+					>
 						💌 Connect with me!
 					</button>
 					<a
@@ -54,6 +61,7 @@ const Home = () => {
 					</a>
 				</div>
 			</motion.div>
+			<ContactModal isOpen={isOpen} setIsOpen={setIsOpen} />
 		</div>
 	);
 };
