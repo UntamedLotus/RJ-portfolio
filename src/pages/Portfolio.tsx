@@ -34,9 +34,8 @@ const Portfolio = () => {
 						className='mySwiper h-96'
 					>
 						{projectList.map((project, index) => (
-							<SwiperSlide>
+							<SwiperSlide key={index}>
 								<ProjectCard
-									key={index}
 									logo={project?.logo}
 									title={project?.title}
 									category={project?.category}
