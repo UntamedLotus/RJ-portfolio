@@ -7,6 +7,7 @@ import AlcroenLogo from "../assets/app-title.png";
 import MaptyLogo from "../assets/MaptyLogo.png";
 import WildOasisLogo from "../assets/WildOasis.png";
 import WorldWiseLogo from "../assets/WorldWise.png";
+import WelkinLogo from "../assets/Welkin.png";
 
 export const projectList: ProjectData[] = [
 	{
@@ -121,6 +122,18 @@ export const projectList: ProjectData[] = [
 			"Implemented interactive map functionality allowing users to drop pins on visited locations, marking their travel footprints.",
 			"Enabled users to log city name, date of visit, and personal notes to preserve memories tied to each travel experience.",
 			"Used REST APIs to manage and persist travel data, practicing real-world API integration and asynchronous operations.",
+		],
+	},
+
+	{
+		logo: WelkinLogo,
+		title: "Welkin",
+		category: "Study",
+		techStack: ["React", "RestAPI", "React-router", "scss"],
+		description: [
+			"Developed a simple and intuitive web application to search information about celestial bodies in solar system.",
+			"Implemented external REST APIs to fetch data regarding the celestial bodies.",
+			"Build the simple fun application for learning purpose of basic react along with css preprocessor - sass.",
 		],
 	},
 ];
