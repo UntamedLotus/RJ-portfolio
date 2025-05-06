@@ -12,7 +12,11 @@ export default {
 			PlayfairDisplay: "Playfair Display",
 			Quicksand: "Quicksand",
 		},
-		extend: {},
+		extend: {
+			screens: {
+				"4k": "2560px",
+			},
+		},
 	},
 	plugins: [],
 };

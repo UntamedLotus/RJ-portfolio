@@ -8,10 +8,12 @@ const Skills = () => {
 		title: string;
 		percentage: number;
 	}) => (
-		<div className='relative'>
-			<p className='pb-2 '>
-				{title}{" "}
-				<span className='text-[#c2718c] text-sm'>{percentage}%</span>
+		<div className='relative w-full'>
+			<p className='pb-2 text-sm sm:text-base font-medium flex justify-between'>
+				<span>{title}</span>
+				<span className='text-[#c2718c] text-xs sm:text-sm'>
+					{percentage}%
+				</span>
 			</p>
 			<section className='w-full bg-gray-200 rounded-full h-2.5 dark:bg-[#eacdda] relative overflow-hidden'>
 				<motion.div
@@ -22,7 +24,7 @@ const Skills = () => {
 				/>
 			</section>
 			<span
-				className='absolute -bottom-3.5 text-pink-500 text-2xl animate-pulse'
+				className='absolute -bottom-3 text-pink-500 text-lg sm:text-xl animate-pulse'
 				style={{ left: `calc(${percentage}% - 8px)` }}
 			>
 				❤︎
@@ -31,8 +33,8 @@ const Skills = () => {
 	);
 
 	return (
-		<div className=' flex items-center justify-center'>
-			<div className='w-3/4 rounded-3xl space-y-7 border-2 border-dashed border-[#cb83a3] p-7 shadow-sm shadow-[#c495aa]'>
+		<div className='flex items-center justify-center px-4 py-10 sm:px-10'>
+			<div className='w-full max-w-5xl space-y-6 sm:space-y-8 p-6 sm:p-10 rounded-3xl border-2 border-dashed border-[#cb83a3] shadow-sm shadow-[#c495aa] bg-white dark:bg-[#fff7f9]'>
 				<Slider title='HTML & CSS' percentage={90} />
 				<Slider title='JavaScript' percentage={85} />
 				<Slider title='TypeScript' percentage={80} />

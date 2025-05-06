@@ -18,25 +18,25 @@ const ProjectDetailsModal = ({
 		>
 			{selectedProject && (
 				<>
-					<header className='flex items-center gap-5'>
+					<header className='flex flex-col md:flex-row gap-5 items-center md:items-start'>
 						<img
 							src={selectedProject?.logo}
 							alt={`${selectedProject?.title} logo`}
-							className='w-28 h-28 object-contain bg-white rounded-2xl border-2 border-dashed border-[#cb83a3]'
+							className='w-32 h-32 object-contain bg-white rounded-xl border-2 border-dashed border-[#cb83a3] shadow-sm'
 						/>
-						<section>
+						<section className='text-center md:text-left'>
 							<h3 className='text-xl font-semibold'>
 								{selectedProject?.title}
 							</h3>
-							<p className='text-[#c2718c] pb-2'>
+							<p className='text-[#c2718c] pb-2 text-sm'>
 								category - {selectedProject?.category}
 							</p>
 
-							<section className='flex flex-wrap gap-2 text-sm '>
+							<section className='flex flex-wrap gap-2 text-sm justify-center md:justify-start'>
 								{selectedProject?.techStack?.map((t, i) => (
 									<span
 										key={i + 1}
-										className='bg-[#d68ea3] px-2 text-white rounded-md'
+										className='bg-[#d68ea3] px-3 py-1 text-white rounded-md'
 									>
 										{t}
 									</span>
@@ -46,7 +46,7 @@ const ProjectDetailsModal = ({
 					</header>
 
 					{selectedProject?.description && (
-						<ul className='mt-5 pt-5 list-inside text-sm text-[#c47797] space-y-1 border-t-2 border-dashed border-[#cb83a3]'>
+						<ul className='mt-5 pt-5 list-inside text-sm text-[#c47797] space-y-2 border-t-2 border-dashed border-[#cb83a3]'>
 							{selectedProject?.description.map((item, idx) => (
 								<li
 									key={idx}
@@ -57,9 +57,10 @@ const ProjectDetailsModal = ({
 							))}
 						</ul>
 					)}
-					<div className='mt-4 text-right'>
+
+					<div className='mt-6 text-end'>
 						<button
-							className='px-6 py-2 rounded-lg border-2 border-[#e7a4b1] text-[#c2718c] hover:bg-[#d68ea3] hover:text-white transition shadow-md'
+							className='px-8 py-3 rounded-lg border-2 border-[#e7a4b1] text-[#c2718c] hover:bg-[#d68ea3] hover:text-white transition shadow-md'
 							onClick={() => setSelectedProject(null)}
 						>
 							Close

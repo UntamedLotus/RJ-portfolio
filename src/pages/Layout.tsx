@@ -10,15 +10,18 @@ const Layout = ({
 }) => {
 	return (
 		<div
-			className={`h-[100vh] grid grid-rows-[10%_auto_5%] px-16 font-JosefinSans  ${
-				darkMode
-					? "bg-[#f3e8e3] text-[#5a2a2a]"
-					: "bg-[#fff0f5] text-[#5a2a2a]"
-			}`}
+			className={`min-h-screen grid grid-rows-[auto_1fr_auto] px-4 font-JosefinSans
+        ${
+			darkMode
+				? "bg-[#f3e8e3] text-[#5a2a2a]"
+				: "bg-[#fff0f5] text-[#5a2a2a]"
+		}`}
 		>
 			<NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
-			<Outlet />
-			<footer className='text-s flex items-center justify-end'>
+			<div className='overflow-y-auto flex-1'>
+				<Outlet />
+			</div>
+			<footer className='text-xs sm:text-sm md:text-base flex items-center justify-end py-4'>
 				<p>ⓒ Ruttika Jadhav {new Date().getFullYear()} 🩷</p>
 			</footer>
 		</div>
